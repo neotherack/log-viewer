@@ -52,4 +52,15 @@ class HTMLGenerator:
         :param str line: Line to be converted.
         :return str: Line.
         """
-        return "<br>{}".format(line)
+        return "<br><pre><code>{}<code/><pre/>".format(line)
+
+    @staticmethod
+    def escape_html(line):
+        """
+        As expected, it escapes HTML to avoid
+        issues while displaying logs containing
+        HTML tags
+        :param str line: Line to be converted.
+        :return str: Line.
+        """
+        return line.replace("<","&lt;").replace("&","&amp;").replace(">","&gt;")

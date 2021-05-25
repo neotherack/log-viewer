@@ -8,15 +8,15 @@ with open(path.join(PATH, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='log_viewer',
-    version='0.1.0',
+    version='0.2.0',
     license='MIT',
     description='Project that exposes the logs.',
     long_description=README,
     long_description_content_type='text/markdown',
-    author='moonrollersoft',
-    author_email='moonrollersoft@gmail.com',
+    author='neotherack',
+    author_email='neotherack@gmail.com',
     url='https://github.com/moonrollersoft/log-viewer/',
-    download_url='https://github.com/moonrollersoft/log-viewer/archive/v0.1.0.tar.gz',
+    download_url='https://github.com/moonrollersoft/log-viewer/archive/v0.2.0.tar.gz',
     packages=find_packages(exclude=['tests', 'docs']),
     classifiers=[
         'Development Status :: 4 - Beta',
