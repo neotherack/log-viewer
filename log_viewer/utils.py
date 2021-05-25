@@ -46,21 +46,25 @@ class HTMLGenerator:
         """.format(summary, main)
 
     @staticmethod
-    def generate_line(line):
+    def generate_accordion(summary, main):
         """
-        Returns an an HTML line.
-        :param str line: Line to be converted.
-        :return str: Line.
+	Returns an HTML native accordion.
+        :param str summary: Accordion's summary.
+        :param str main: Accordion's main body.
+        :return str: Accordion.
         """
-        return "<br><pre><code>{}<code/><pre/>".format(line)
+	return """
+        <details>
+                <summary>{}</summary>
+                <main><pre><code>{}</code></pre></main>
+        </details>
+        """.format(summary, main)
 
     @staticmethod
-    def escape_html(line):
+    def generate_line(line):
         """
-        As expected, it escapes HTML to avoid
-        issues while displaying logs containing
-        HTML tags
+	Returns an an HTML line.
         :param str line: Line to be converted.
         :return str: Line.
         """
-        return line.replace("<","&lt;").replace("&","&amp;").replace(">","&gt;")
+	return "{}".format(line.replace("<","&lt;").replace("&","&amp;").replace(">","&gt;"))

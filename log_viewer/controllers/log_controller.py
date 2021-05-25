@@ -1,4 +1,5 @@
 import logging
+import os
 from pathlib import Path
 
 import log_viewer.settings as st
@@ -45,6 +46,9 @@ class LogController:
             except PermissionError as e:
                 logging.warning("Error reading file path: {}, {}".format(file_paths, e))
 
-            html += self._html_generator.generate_accordion(str(file_paths), lines_html)
+            size = os.path.getsize(file_paths)
+            if size>0:
+                title = f"{file_paths} ({size} bytes)"
+                html += self._html_generator.generate_accordion(title, lines_html)
 
         return html
