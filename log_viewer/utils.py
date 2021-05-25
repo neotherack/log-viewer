@@ -48,12 +48,12 @@ class HTMLGenerator:
     @staticmethod
     def generate_accordion(summary, main):
         """
-	Returns an HTML native accordion.
+        Returns an HTML native accordion.
         :param str summary: Accordion's summary.
         :param str main: Accordion's main body.
         :return str: Accordion.
         """
-	return """
+        return """
         <details>
                 <summary>{}</summary>
                 <main><pre><code>{}</code></pre></main>
@@ -63,8 +63,8 @@ class HTMLGenerator:
     @staticmethod
     def generate_line(line):
         """
-	Returns an an HTML line.
+        Returns an an HTML line.
         :param str line: Line to be converted.
         :return str: Line.
         """
-	return "{}".format(line.replace("<","&lt;").replace("&","&amp;").replace(">","&gt;"))
+        return "{}".format(line.replace("<","&lt;").replace("&","&amp;").replace(">","&gt;"))
